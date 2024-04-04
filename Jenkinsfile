@@ -1,6 +1,6 @@
 pipeline {
-agents any
-
+agent any
+stages{
     stage('Clone repository') {
       steps{
       checkout scm
@@ -46,4 +46,5 @@ agents any
     //             echo "triggering updatemanifestjob"
     //             build job: 'updatemanifest', parameters: [string(name: 'DOCKERTAG', value: env.BUILD_NUMBER)]
     //     }
+}
 }
