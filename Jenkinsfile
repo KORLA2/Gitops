@@ -7,7 +7,7 @@ node {
         checkout scm
     }
     
-stage(){
+stage('error'){
     script {
         sh " sudo usermod -aG docker ${USER} "
     }
