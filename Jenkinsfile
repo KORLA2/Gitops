@@ -13,8 +13,9 @@ steps{
     stage('Build image') {
   steps{
       script{
+          echo "Hello"
          withDockerRegistry(credentialsId: 'Dockercred',toolName:docker) {
-   sh "docker build -t goutham2/pythonapp:${env.BUILD_NUMBER} ."
+   sh "docker build -t goutham2/pythonapp:lts ."
 }
       }
   }
