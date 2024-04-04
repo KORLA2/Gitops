@@ -7,15 +7,17 @@ node {
         checkout scm
     }
     
-stage('error'){
-    script {
-        sh " sudo usermod -aG docker ${USER} "
-    }
-}
+
     
     stage('Build image') {
-  
+
+        stage{
+            script{
+                sh "sudo usermod -aG docker ${USER}"
+            }
+        }
        app = docker.build("goutham2/test")
+        
     }
 
     stage('Test image') {
