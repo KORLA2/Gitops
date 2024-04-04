@@ -13,7 +13,7 @@ stages{
   steps{
       script{
          withDockerRegistry(credentialsId: 'Dockercred',toolName:docker) {
-   sh `docker build -t goutham2/pythonapp:${env.BUILD_NUMBER} .`
+   sh "docker build -t goutham2/pythonapp:${env.BUILD_NUMBER} ."
 }
       }
   }
@@ -33,7 +33,7 @@ stages{
           steps{
       script{
          withDockerRegistry(credentialsId: 'Dockercred',toolName:docker) {
-   sh `docker push  goutham2/pythonapp:${env.BUILD_NUMBER} `
+   sh 'docker push  goutham2/pythonapp:${env.BUILD_NUMBER} '
 }
       }
   }
