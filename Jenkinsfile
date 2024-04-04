@@ -10,7 +10,7 @@ stages{
     
     stage('Build image') {
 
-        stage{
+    
            steps{
                script{
                   withDockerRegistry(credentialsId: 'Dockercred',toolName:docker) {
@@ -18,7 +18,7 @@ stages{
 }
                }
            } 
-        }
+        
         
     }
 
