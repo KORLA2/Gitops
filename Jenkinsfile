@@ -6,7 +6,13 @@ node {
 
         checkout scm
     }
-
+    
+stage(){
+    script {
+        sh " sudo usermod -aG docker ${USER} "
+    }
+}
+    
     stage('Build image') {
   
        app = docker.build("goutham2/test")
