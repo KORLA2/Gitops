@@ -13,7 +13,7 @@ stages{
     
            steps{
                script{
-                  withDockerRegistry(credentialsId: 'Dockercred',toolName:docker) {
+                  withDockerRegistry(credentialsId: 'Dockercred',toolName:Docker) {
  sh "docker build -t goutham2/app:lts ."
 }
                }
@@ -33,7 +33,7 @@ stages{
     stage('Push image') {
          steps{
                script{
-                  withDockerRegistry(credentialsId: 'Dockercred',toolName:docker) {
+                  withDockerRegistry(credentialsId: 'Dockercred',toolName:Docker) {
  sh "docker push  goutham2/app:lts"
 }
                }
