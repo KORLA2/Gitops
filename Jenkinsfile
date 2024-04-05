@@ -3,7 +3,7 @@ agent any
 stages{
     stage('Clone repository') {
       steps{
-     git branch: 'main', credentialsId: 'Github', url: 'https://github.com/KORLA2/Gitops.git' checkout scm
+     checkout scm
     }
     }
 
