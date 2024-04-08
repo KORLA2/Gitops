@@ -2,8 +2,10 @@ pipeline{
 agent any
 stages{
 stage('deploy'){
+steps{
 withKubeConfig(caCertificate: '', clusterName: 'local-cluster', contextName: 'local-cluster', credentialsId: 'kube-cred', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: ' https://192.168.58.2:8443') {
  sh "kubectl apply -f depl.yml" 
+}
 }
 }
 
