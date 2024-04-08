@@ -3,7 +3,7 @@ agent any
 stages{
 stage('deploy'){
 steps{
-withKubeConfig(caCertificate: 'ca-cert', clusterName: 'local-cluster', contextName: 'local-cluster', credentialsId: 'Github', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: ' https://192.168.58.2:8443') {
+withKubeConfig(caCertificate: '', clusterName: 'local-cluster', contextName: 'local-cluster', credentialsId: 'kube-cred', namespace: 'webapps', restrictKubeConfigAccess: false, serverUrl: 'https://192.168.58.2:8443') {
  sh "kubectl apply -f depl.yml" 
 }
 }
